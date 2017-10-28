@@ -1,0 +1,23 @@
+<h2>Show agilefit</h2>
+
+<ul>
+
+  <li>
+    <strong>Criterias:</strong>
+    <%= @agilefit.criterias %>
+  </li>
+
+  <li>
+    <strong>Answer1:</strong>
+    <%= @agilefit.answer1 %>
+  </li>
+
+  <li>
+    <strong>Answer2:</strong>
+    <%= @agilefit.answer2 %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: agilefit_path(@conn, :edit, @agilefit) %>
+<%= link "Back", to: agilefit_path(@conn, :index) %>

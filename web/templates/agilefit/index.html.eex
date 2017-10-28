@@ -1,0 +1,32 @@
+<h2>Listing criteria agile</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Criterias</th>
+      <th>Answer1</th>
+      <th>Answer2</th>
+      <th>Answer3</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for agilefit <- @criteria_agile do %>
+    <tr>
+      <td><%= agilefit.criterias %></td>
+      <td><%= agilefit.answer1 %></td>
+      <td><%= agilefit.answer2 %></td>
+      <td><%= agilefit.answer3 %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: agilefit_path(@conn, :show, agilefit), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: agilefit_path(@conn, :edit, agilefit), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: agilefit_path(@conn, :delete, agilefit), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New agilefit", to: agilefit_path(@conn, :new) %>

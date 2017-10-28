@@ -1,0 +1,30 @@
+<h2>Listing question list</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Questions</th>
+      <th>Answer1</th>
+      <th>Answer2</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for questionnaire <- @question_list do %>
+    <tr>
+      <td><%= questionnaire.questions %></td>
+      <td><%= questionnaire.answer1 %></td>
+      <td><%= questionnaire.answer2 %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: questionnaire_path(@conn, :show, questionnaire), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: questionnaire_path(@conn, :edit, questionnaire), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: questionnaire_path(@conn, :delete, questionnaire), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New questionnaire", to: questionnaire_path(@conn, :new) %>

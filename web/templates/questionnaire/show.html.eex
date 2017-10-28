@@ -1,0 +1,23 @@
+<h2>Show questionnaire</h2>
+
+<ul>
+
+  <li>
+    <strong>Questions:</strong>
+    <%= @questionnaire.questions %>
+  </li>
+
+  <li>
+    <strong>Answer1:</strong>
+    <%= @questionnaire.answer1 %>
+  </li>
+
+  <li>
+    <strong>Answer2:</strong>
+    <%= @questionnaire.answer2 %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: questionnaire_path(@conn, :edit, @questionnaire) %>
+<%= link "Back", to: questionnaire_path(@conn, :index) %>

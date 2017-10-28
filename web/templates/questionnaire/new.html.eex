@@ -1,0 +1,6 @@
+<h2>New questionnaire</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: questionnaire_path(@conn, :create) %>
+
+<%= link "Back", to: questionnaire_path(@conn, :index) %>

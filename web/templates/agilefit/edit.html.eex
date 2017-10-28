@@ -1,0 +1,6 @@
+<h2>Edit agilefit</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: agilefit_path(@conn, :update, @agilefit) %>
+
+<%= link "Back", to: agilefit_path(@conn, :index) %>
